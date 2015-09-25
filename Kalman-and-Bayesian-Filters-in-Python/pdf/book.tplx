@@ -1,0 +1,20 @@
+% Inherit from report
+((* extends 'report.tplx' *))
+ 
+ 
+((* block docclass *))
+\documentclass{book}
+\setcounter{chapter}{0}
+((* endblock docclass *))
+ 
+((* block preamble *))
+((* endblock preamble *))
+ 
+((* block title *))
+\title{Kalman and Bayesian Filters in Python}
+\author{Roger R Labbe Jr}
+((* endblock title *))
+ 
+((* block markdowncell scoped *))
+    ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--chapters"]) )))
+((* endblock markdowncell *))
